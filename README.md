@@ -25,9 +25,9 @@ MedCare Pro is a high-end, dark-themed Medical Management System designed for se
 * **Storage:** Browser LocalStorage (for persistent data simulation without a backend)
 
 ## 📸 Screenshots
-| Login Portal | Patient Dashboard | Doctor Queue |
+| Login Portal | patients appointments  | Doctor Queue |
 | :--- | :--- | :--- |
-| ![Login Portal](login.png) | ![Booking Dashboard](booking.png) | ![Payment Options](payment.png) |
+| ![Login Portal](login.png) | ![Booking Dashboard](appointments.png) | ![Payment Options](queue.png) |
 
 ## 📦 Installation & Setup
 1. Clone the repository:
