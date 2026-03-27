@@ -27,7 +27,7 @@ MedCare Pro is a high-end, dark-themed Medical Management System designed for se
 ## 📸 Screenshots
 | Login Portal | Patient Dashboard | Doctor Queue |
 | :--- | :--- | :--- |
-| ![Login](https://via.placeholder.com/300x200?text=Enterprise+Login) | ![Booking](https://via.placeholder.com/300x200?text=Smart+Booking) | ![Queue](https://via.placeholder.com/300x200?text=Patient+Queue) |
+| ![Login Portal](login.png) | ![Booking Dashboard](booking.png) | ![Payment Options](payment.png) |
 
 ## 📦 Installation & Setup
 1. Clone the repository:
