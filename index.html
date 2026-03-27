@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedCare Pro | Enterprise 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-shell">
+        <aside id="sidebar" class="sidebar hidden">
+            <div class="sidebar-header">
+                <div class="logo-icon">✚</div>
+                <div class="logo-text">Med<span>Care</span></div>
+            </div>
+            <div class="user-context-card">
+                <div class="avatar" id="nav-avatar">?</div>
+                <div class="user-info">
+                    <strong id="nav-name">User</strong>
+                    <small id="nav-role">Role</small>
+                </div>
+            </div>
+            <nav class="nav-links" id="nav-links"></nav>
+            <button class="logout-btn-premium" onclick="location.reload()">⏻ Terminate Session</button>
+        </aside>
+
+        <main class="main-viewport">
+            <section id="view-auth" class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-info">
+                        <h1>MedCare <br><span>Enterprise</span></h1>
+                        <p>Secure clinical synchronization. Please enter credentials.</p>
+                    </div>
+                    <div class="auth-form">
+                        <h3>Secure Access</h3>
+                        <input type="text" id="auth-user" placeholder="Full Name">
+                        <input type="password" id="auth-pass" placeholder="Password">
+                        <select id="auth-role" onchange="app.toggleHospField()">
+                            <option value="patient">Student / Patient Portal</option>
+                            <option value="doctor">Medical Specialist Portal</option>
+                        </select>
+                        <div id="hosp-select-group" class="hidden">
+                            <label>Assigned Facility</label>
+                            <select id="auth-hosp">
+                                <option value="City General">City General Hospital</option>
+                                <option value="St. Marys Medical">St. Marys Medical Center</option>
+                                <option value="Sunrise Wellness">Sunrise Wellness Clinic</option>
+                            </select>
+                        </div>
+                        <button class="btn-primary" onclick="app.handleLogin()">Initialize Dashboard</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="view-dash" class="dash-container hidden">
+                <header class="dash-header"><h1 id="pane-title">Dashboard</h1></header>
+
+                <div id="pane-booking" class="pane hidden">
+                    <div class="glass-module">
+                        <h3>New Consultation</h3>
+                        <label>1. Select Hospital</label>
+                        <select id="book-hosp" onchange="app.filterDoctors('book-hosp', 'book-doc')">
+                            <option value="">-- Select Hospital --</option>
+                            <option value="City General">City General Hospital</option>
+                            <option value="St. Marys Medical">St. Marys Medical Center</option>
+                            <option value="Sunrise Wellness">Sunrise Wellness Clinic</option>
+                        </select>
+                        <label>2. Select Doctor</label>
+                        <select id="book-doc" disabled><option>Select hospital first</option></select>
+                        
+                        <label>3. Reason for Visit</label>
+                        <textarea id="book-reason" placeholder="Describe symptoms or reason for reservation..."></textarea>
+
+                        <label>4. Payment Method</label>
+                        <div class="radio-group">
+                            <label class="radio-tile"><input type="radio" name="pay" value="Insurance" checked><span>🛡️ Insurance</span></label>
+                            <label class="radio-tile"><input type="radio" name="pay" value="Credit Card"><span>💳 Card</span></label>
+                            <label class="radio-tile"><input type="radio" name="pay" value="Cash (On Visit)"><span>💵 Cash</span></label>
+                        </div>
+                        <button class="btn-primary" onclick="app.processBooking()">Confirm & Reserve</button>
+                    </div>
+                </div>
+
+                <div id="pane-reviews" class="pane hidden">
+                    <div id="review-input-area"></div>
+                    <div id="review-list"></div>
+                </div>
+
+                <div id="pane-history" class="pane hidden"><div id="history-list"></div></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
